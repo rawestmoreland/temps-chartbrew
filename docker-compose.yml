@@ -1,0 +1,13 @@
+version: '3.7'
+services:
+  chartbrew_postgres:
+    container_name: chartbrew_postgres
+    image: postgres:14.0
+    environment:
+      POSTGRES_DB: chartbrew
+      POSTGRES_USER: chartbrew
+      POSTGRES_PASSWORD: chartbrew
+    ports:
+      - '5434:5432'
+    volumes:
+      - ./db:/var/lib/postgresql/data
